@@ -7,10 +7,18 @@ Standards-Version: 3.9.3
 Homepage: http://www.flightaware.com/
 Vcs-Git: https://github.com/flightaware/dump978.git
 
+Package: dump978-fa-minimal
+Architecture: any
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: ADS-B UAT Ground Station System - decoder only
+ .
+ FlightAware's SDR decoder for UAT ADS-B messages on 978MHz. This is only the decoder.
+
 Package: dump978-fa
 Architecture: any
 Pre-Depends: ${misc:Pre-Depends}
-Depends: ${shlibs:Depends}, ${misc:Depends}, adduser
+Depends: ${shlibs:Depends}, ${misc:Depends}, adduser, dump978-fa-minimal
 Recommends: skyaware978, soapysdr-module-rtlsdr
 Description: ADS-B UAT Ground Station System
  .
